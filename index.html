@@ -21,7 +21,7 @@
   <!---- favicon ---->
 
   <link rel="shortcut icon" href="./assets/img/profile.png" type="image/x-icon" />
-
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!---- styles ---->
 
   <link rel="stylesheet" href="./css/reset.css" />
@@ -32,13 +32,17 @@
 </head>
 
 <body>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   <!---- HEADER NAV SECTION ---->
 
   <header id="header">
     <nav>
       <div class="nav__container">
         <div class="nav__logo">
-          <a href="#header">Nicolas Oviedo</a>
+          <a href="#header" >Nicolas Oviedo</a>
         </div>
         <!---- Menu ---->
         <div class="nav__menu">
@@ -64,10 +68,11 @@
     <!---- MAIN - INDEX SECTION ---->
 
     <div class="hero">
-      <div class="hero__container">
+      <div class="hero__container" data-aos="fade-up"
+      data-aos-duration="3000">
         <div class="hero__container-content">
           <!---- left side ---->
-          <div class="hero__image">
+          <div class="hero__image" >
             <div class="animated-border"></div>
             <img src="assets/img/profile.png" alt="img" />
           </div>
@@ -75,7 +80,7 @@
             <h1 class="hero__title">
               Hola! Soy
               <br>
-              <strong> Nicolas Oviedo</strong>
+              <strong data-aos="fade-up"> Nicolas Oviedo</strong>
               <br>
             </h1>
             <span class="hero__subtitle">Desarrollador Web Front-End.</span>
@@ -145,13 +150,15 @@
   <!---- ABOUT SECTION ---->
 
   <main>
-    <section class="about" id="about">
+    <section class="about" id="about" data-aos="zoom-in"
+    data-aos-offset="300"
+    data-aos-easing="ease-in-sine>
       <div class="title__container">
         <h1 class="about__title">Sobre Mí</h1>
       </div>
       <div class="about__container">
         <!---- left side ---->
-        <div class="about__text">
+        <div class="about__text" >
           <h2 class="about__subtitle">Nicolas Oviedo</h2>
           <p class="about__description">
             Me caracterizo por ser una persona autodidacta, siempre intentando aprender nuevas tecnologías y
@@ -166,7 +173,7 @@
           </p>
           <!---- right side ---->
         </div>
-        <div class="about__image">
+        <div  class="about__image" >
           <img src="assets/about/about-image-complete.svg" alt="about" />
         </div>
       </div>
@@ -260,7 +267,7 @@
         <!---- STUDY ITEM TOP ---->
         <div class="study__item">
           <!---- Cover Soy Henry ---->
-          <div class="study__card">
+          <div class="study__card" data-aos="zoom-out-down">
             <img src="assets/study/Henry_Cover_Portfolio.png" alt="Soy-Henry" />
             <img class="henry__bw" src="assets/study/Henry_Covers_Portfolio-bw.png" alt="Soy-Henry" />
             <h3 class="study__title-card">
@@ -270,7 +277,7 @@
           </div>
           
           <!---- Cover master ---->
-          <div class="study__card">
+          <div class="study__card" data-aos="zoom-out-down">
             <img src="assets/study/MasterJS_Udemy_Cover.png" alt="Alura-Oracle-One" />
             <img class="alura__bw" src="assets/study/MasterJS_Udemy_Cover-bw.png" alt="Alura-Oracle-One" />
             <h3 class="study__title-card">
@@ -280,7 +287,7 @@
           </div>
           
           <!---- Cover JS ---->
-          <div class="study__card">
+          <div class="study__card" data-aos="zoom-out-down">
             <img src="assets/study/js_full.png" alt="React-Udemy" />
             <img class="react__bw" src="assets/study/js_full-bw.png" alt="React-Udemy" />
             <h3 class="study__title-card">
@@ -290,7 +297,7 @@
           </div>
 
           <!---- Cover Freecodecamp ---->
-          <div class="study__card">
+          <div class="study__card" data-aos="zoom-out-down">
             <img src="assets/study/fcp_responsive_web.png" alt="Freecodecamp" />
             <img class="freecodecamp__bw" src="assets/study/fcp_responsive_web-bw.png" alt="Freecodecamp" />
             <h3 class="study__title-card">
@@ -300,7 +307,7 @@
           </div>
 
           <!---- Cover Freecodecamp ---->
-          <div class="study__card">
+          <div class="study__card" data-aos="zoom-out-down">
             <img src="assets/study/Front_Freecodecamp.png" alt="Freecodecamp" />
             <img class="freecodecamp__bw" src="assets/study/Front_Freecodecamp-bw.png" alt="Freecodecamp" />
             <h3 class="study__title-card">
@@ -459,6 +466,7 @@
     
   </footer>
   <script src="js/script.js"></script>
+  
 </body>
 
 </html>
