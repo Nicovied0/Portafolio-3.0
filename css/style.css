@@ -745,7 +745,10 @@ nav {
   left: 100%;
   right: -100%;
 }
-
+.divDescription{
+  margin: 2rem 2rem;
+color: White;
+}
 /*! <--------- Contact Section --------->*/
 
 .contact {
