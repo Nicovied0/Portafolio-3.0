@@ -525,13 +525,13 @@
     font-size: 37px;
   }
 
-  .about,
+  /* .about,
   .skills,
   .projects,
   .study,
   .contact {
     padding: 65px 5px;
-  }
+  } */
 
   .animated-border {
     width: 197px;
