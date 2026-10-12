@@ -1,25 +1,26 @@
-
 @echo off
-setlocal EnableExtensions EnableDelayedExpansion
+setlocal
 
-REM Prueba controlada: primera semana de 2024
-set "START=2024-01-01"
-set "DAYS=7"
-
-REM Validar que estamos dentro de un repositorio Git
-git rev-parse --is-inside-work-tree >nul 2>&1
-if errorlevel 1 (
-    echo ERROR: Ejecuta el script dentro del repositorio de prueba.
-    exit /b 1
+for %%D in (2023-10-13 2023-10-14 2023-10-15 2023-10-16 2023-10-17 2023-10-18 2023-10-19 2023-10-20 2023-10-21 2023-10-22
+2023-10-23 2023-10-24 2023-10-25 2023-10-26 2023-10-27 2023-10-28 2023-10-29 2023-10-30 2023-10-31
+2023-11-01 2023-11-02 2023-11-03 2023-11-04 2023-11-05 2023-11-06 2023-11-07 2023-11-08 2023-11-09 2023-11-10
+2023-11-11 2023-11-12 2023-11-13 2023-11-14 2023-11-15 2023-11-16 2023-11-17 2023-11-18 2023-11-19 2023-11-20
+2023-11-21 2023-11-22 2023-11-23 2023-11-24 2023-11-25 2023-11-26 2023-11-27 2023-11-28 2023-11-29 2023-11-30
+2023-12-01 2023-12-02 2023-12-03 2023-12-04 2023-12-05 2023-12-06 2023-12-07 2023-12-08 2023-12-09 2023-12-10
+2023-12-11 2023-12-12 2023-12-13 2023-12-14 2023-12-15 2023-12-16 2023-12-17 2023-12-18 2023-12-19 2023-12-20
+2023-12-21 2023-12-22 2023-12-23 2023-12-24 2023-12-25 2023-12-26 2023-12-27 2023-12-28 2023-12-29 2023-12-30
+2023-12-31) do (
+    for /L %%N in (1,1,4) do (
+        set "COMMIT_DATE=%%D"
+        call :commit %%D %%N
+    )
 )
 
-REM Comprobar que no se use accidentalmente el portafolio
-for /f "delims=" %%R in ('git remote get-url origin 2^>nul') do set "REMOTE=%%R"
-echo Repositorio remoto: !REMOTE!
-echo.
+echo Prueba finalizada.
+exit /b
 
-echo Este script es para validar fechas en un periodo corto.
-echo No publica nada en GitHub.
-echo.
-
-exit /b 0
+:commit
+set "GIT_AUTHOR_DATE=%~1T10:00:00"
+set "GIT_COMMITTER_DATE=%~1T10:00:00"
+git -c user.name="Git Test" -c user.email="git-test@example.com" commit --allow-empty -m "Test commit %~1 #%~2"
+exit /b
